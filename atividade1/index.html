@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+    <button class="open-modal" data-modal="modal-1">Cadastrar</button>
+    <button class="open-modal" data-modal="modal-2">Listar</button>
+
+    <!-- Modal Cadastrar -->
+    <dialog id="modal-1">
+        <form>
+            <div class="modal-header">
+                <h1 class="modal-title">Cadastrar</h1>
+                <button class="close-modal" type="button" data-modal="modal-1">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao">
+                </div>
+                <div class="input-group">
+                    <label for="prioridade">Prioridade</label>
+                    <input type="text" id="prioridade" name="prioridade">
+                </div>
+                <select name="status">
+                    <option value="">Selecione</option>
+                    <option value="true">Concluída</option>
+                    <option value="false">Não Concluída</option>
+                </select>
+                <button id="cad_button">Cadastrar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Modal Listar -->
+    <dialog id="modal-2">
+        <div class="modal-header">
+            <h1 class="modal-title">Lista de Tarefas</h1>
+            <button class="close-modal" type="button" data-modal="modal-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul class="task-list" id="task-list"></ul>
+        </div>
+    </dialog>
+
+    <script src="src/js/script.js"></script>
+</body>
+</html>
